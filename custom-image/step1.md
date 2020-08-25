@@ -20,7 +20,7 @@ Docker file is a configuration file that tells docker how to create the image
 
 With the build command inside a folder within a dockerfile, Docker will use the information inside that file to build the image
 
-`docker build --tags my-custom-image .`{{execute}}
+`docker build --tag my-custom-image .`{{execute}}
 
 ## Check if the image is correctly created
 

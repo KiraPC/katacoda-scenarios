@@ -2,6 +2,10 @@ Create the Python file
 
 ## Create the Script
 
+Create a folder that will contains the script
+
+`mkdir app`{{execute}}
+
 Create a Python script that will print 'Hello World'
 
 `echo 'print("Hello World")' > app/custom_image.py && ls`{{execute}}

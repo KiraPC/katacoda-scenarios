@@ -1,7 +1,7 @@
-This is your first step.
+Run your first Docker Image
 
 ## Task
 
-This is an _example_ of creating a scenario and running a **command**
+Launch the Docker run command passing the image name as input (it will pull the image if it is not locally)
 
-`echo 'Hello World'`{{execute}}
+`docker run hello-world`{{execute}}

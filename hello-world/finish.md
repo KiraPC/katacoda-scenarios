@@ -1,1 +1,1 @@
-You've completed your first Katacoda scenario!
+You've ran your first Docker command

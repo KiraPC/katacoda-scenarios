@@ -1,26 +1,22 @@
 {
-  "title": "Hello World Scenario",
-  "description": "Your First Scenario",
-  "difficulty": "beginner",
-  "time": "2 minutes",
+  "title": "Ubuntu 18.04 Instance",
+  "description": "General purpose environment",
   "details": {
-    "steps": [{
-      "title": "Step 1 - Run Command",
-      "text": "step1.md"
-    }],
-    "intro": {
-      "text": "intro.md",
-      "credits": ""
-    },
+    "steps": [
+      {
+        "title": "Step 1",
+        "text": "step1.md"
+      }
+    ],
     "finish": {
       "text": "finish.md"
     }
   },
   "environment": {
-    "uilayout": "terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
+    "hideintro": true,
+    "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "bash"
+    "imageid": "ubuntu:1804"
   }
 }

@@ -3,8 +3,8 @@
 - Activate minikube environment
 
 ```
-minikube start
-```{{execute}}
+kubeadm init --kubernetes-version $(kubeadm version -o short)
+```{{execute HOST1}}
 
 - Locate into the demo_train folder and build the first image using Docker.
 
@@ -67,7 +67,7 @@ spec:
     spec:
       containers:
       - name: train-app
-        image: *********
+        image: train_image
         imagePullPolicy: Never
         ports:
         - containerPort: 80

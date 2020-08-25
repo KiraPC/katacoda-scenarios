@@ -1,1 +1,1 @@
-You've ran your first Docker command
+Congrats! You've created your first Docker Image

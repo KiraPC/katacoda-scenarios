@@ -1,6 +1,6 @@
 {
-  "title": "Ubuntu 18.04 Instance",
-  "description": "General purpose environment",
+  "title": "Docker Hello-World",
+  "description": "Run the Docker hello-world container",
   "details": {
     "steps": [
       {

@@ -1,6 +1,6 @@
 {
-  "title": "Ubuntu 18.04 Instance",
-  "description": "General purpose environment",
+  "title": "Docker Custom Image",
+  "description": "Creation of a docker image from a python file",
   "details": {
     "steps": [
       {

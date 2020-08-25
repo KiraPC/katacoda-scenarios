@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ml-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ml-app
+  template:
+    metadata:
+      labels:
+        app: ml-app
+    spec:
+      containers:
+      - name: train-app
+        image: *********
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: models
+          mountPath: "/etc/models"
+      - name: predict-app
+        image: predict_image
+        imagePullPolicy: Never
+        ports:
+        - containerPort: ****
+        volumeMounts:
+        - name: models
+          mountPath: "/etc/models"
+      volumes:
+      - name: models

@@ -65,9 +65,10 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "editor-terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\n"
   },
   "backend": {
-    "imageid": "kubernetes-cluster:1.18"
+    "imageid": "minikube"
   }
 }

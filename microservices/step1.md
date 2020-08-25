@@ -3,8 +3,8 @@
 - Activate minikube environment
 
 ```
-kubeadm init --kubernetes-version $(kubeadm version -o short)
-```{{execute HOST1}}
+minikube start
+```{{execute}}
 
 - Locate into the demo_train folder and build the first image using Docker.
 

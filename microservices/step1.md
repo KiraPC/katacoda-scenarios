@@ -57,6 +57,9 @@ metadata:
   name: ml-app
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: ml-app
   template:
     metadata:
       labels:
@@ -64,7 +67,7 @@ spec:
     spec:
       containers:
       - name: train-app
-        image: train_image
+        image: *********
         imagePullPolicy: Never
         ports:
         - containerPort: 80
@@ -81,6 +84,24 @@ spec:
           mountPath: "/etc/models"
       volumes:
       - name: models
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+      app: ml-app
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+spec:
+    selector:
+      app: ml-app
+    ports:
+    - port: 8083
+      targetPort: 8083
+      protocol: TCP
+    type: LoadBalancer
 ```{{copy}}
 
 - Locate into the /root folder and deploy the application using Kubernetes and the deployment.yml file:

@@ -25,9 +25,27 @@ spec:
         image: predict_image
         imagePullPolicy: Never
         ports:
-        - containerPort: ****
+        - containerPort: 8083
         volumeMounts:
         - name: models
           mountPath: "/etc/models"
       volumes:
       - name: models
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+      app: ml-app
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+spec:
+    selector:
+      app: ml-app
+    ports:
+    - port: 8083
+      targetPort: 8083
+      protocol: TCP
+    type: LoadBalancer

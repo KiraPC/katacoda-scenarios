@@ -11,7 +11,7 @@ To create a Docker Image, also called container, you can run the following comma
 
 Move in the Dockerfile directorty
 
-`cd src`{{execute}}
+`cd server-hello`{{execute}}
 
 Run the build command
 
@@ -35,6 +35,4 @@ Now that our image is built, we can test it.
 
 Now the server is up and running, you can contact it at the following url
 
-https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com
-
-<pre>https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com</pre>
+https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/api/hello

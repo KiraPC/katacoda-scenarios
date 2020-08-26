@@ -19,15 +19,15 @@
       "host01": [
         {
           "file": "Dockerfile",
-          "target": "/root"
+          "target": "/root/server-hello"
         },
         {
           "file": "src/requirements.txt",
-          "target": "/root/src"
+          "target": "/root/server-hello/src"
         },
         {
           "file": "src/app/server.py",
-          "target": "/root/src/app"
+          "target": "/root/server-hello/src/app"
         }
       ]
     }

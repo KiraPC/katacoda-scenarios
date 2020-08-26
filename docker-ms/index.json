@@ -1,0 +1,42 @@
+{
+  "title": "Docker Microservices",
+  "description": "Docker MS Workshop",
+  "difficulty": "Intermediate",
+  "time": "20 minutes",
+  "details": {
+    "steps": [{
+      "title": "Build a Microservice Container with Docker",
+      "text": "step1.md"
+    }],
+    "intro": {
+      "text": "intro.md",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "Dockerfile",
+          "target": "/root"
+        },
+        {
+          "file": "src/requirements.txt",
+          "target": "/root/src"
+        },
+        {
+          "file": "src/app/server.py",
+          "target": "/root/src/app"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\n"
+  },
+  "backend": {
+    "imageid": "ubuntu:1804"
+  }
+}

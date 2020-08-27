@@ -4,10 +4,16 @@
   "difficulty": "Intermediate",
   "time": "20 minutes",
   "details": {
-    "steps": [{
-      "title": "Build a Microservice Container with Docker",
-      "text": "step1.md"
-    }],
+    "steps": [
+      {
+        "title": "Build a Microservice Container with Docker",
+        "text": "step1.md"
+      },
+      {
+        "title": "Update a Microservice Container with Docker",
+        "text": "step2.md"
+      }
+    ],
     "intro": {
       "text": "intro.md",
       "credits": ""

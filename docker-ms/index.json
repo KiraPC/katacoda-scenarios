@@ -43,6 +43,6 @@
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\n"
   },
   "backend": {
-    "imageid": "ubuntu:1804"
+    "imageid": "kubernetes-cluster-running:1.18"
   }
 }

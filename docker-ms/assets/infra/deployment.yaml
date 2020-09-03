@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server-hello
+  template:
+    metadata:
+      labels:
+        app: server-hello
+    spec:
+      containers:
+        - name: server-hello-img
+            image: server-hello
+            imagePullPolicy: Never
+            ports:
+                - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+      app: server-hello
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+spec:
+    selector:
+      app: server-hello
+    ports:
+    - port: 8083
+      targetPort: 8083
+      protocol: TCP
+    type: LoadBalancer

@@ -44,7 +44,7 @@ To contact the service running on Kubernets, we need to find the port where it i
 ```
 export PORT=$(kubectl get services | grep server-hello* | awk '{print $5}' | cut -b 4-8)
 echo $PORT
-```
+```{{execute}}
 
 Now the we have the port, we can query it, replacing the PORT in the following URL.
 

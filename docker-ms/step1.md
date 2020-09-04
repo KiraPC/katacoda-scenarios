@@ -29,7 +29,7 @@ If my-custom-image appear in read it was correctly created
 
 Now that our image is built, we can test it.
 
-`docker run -p 80:80 -d --name server-hello server-hello`{{execute}}
+`docker run -p 80:8083 -d --name server-hello server-hello`{{execute}}
 
 ## Test the container
 

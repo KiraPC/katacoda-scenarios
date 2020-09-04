@@ -12,6 +12,10 @@
       {
         "title": "Update a Microservice Container with Docker",
         "text": "step2.md"
+      },
+      {
+        "title": "Deploy the Container on Kubernetes",
+        "text": "step3.md"
       }
     ],
     "intro": {
@@ -34,6 +38,10 @@
         {
           "file": "src/app/server.py",
           "target": "/root/server-hello/src/app"
+        },
+        {
+          "file": "infra/deployment.yaml",
+          "target": "/root/server-hello/infra"
         }
       ]
     }
@@ -43,6 +51,6 @@
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\n"
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18"
+    "imageid": "minikube"
   }
 }

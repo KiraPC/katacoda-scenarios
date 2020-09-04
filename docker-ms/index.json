@@ -47,7 +47,7 @@
     }
   },
   "environment": {
-    "uilayout": "vscode-terminal-split",
+    "uilayout": "editor-terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\n"
   },
   "backend": {

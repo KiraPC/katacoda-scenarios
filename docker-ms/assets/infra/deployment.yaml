@@ -13,11 +13,11 @@ spec:
         app: server-hello
     spec:
       containers:
-        - name: server-hello-img
-            image: server-hello
-            imagePullPolicy: Never
-            ports:
-                - containerPort: 80
+        - name: server-hello
+          image: server-hello
+          imagePullPolicy: Never
+          ports:
+              - containerPort: 80
 
 ---
 
@@ -33,7 +33,7 @@ spec:
     selector:
       app: server-hello
     ports:
-    - port: 8083
-      targetPort: 8083
+    - port: 80
+      targetPort: 80
       protocol: TCP
     type: LoadBalancer

@@ -33,7 +33,7 @@ Let's check if it was correctly created.
 
 `kubectl get pods`{{execute}}
 
-If you can see a pod with the name 'server-hello-container-*****' and status Running, ererything were fine.
+If you can see a pod with the name 'server-hello-*****' and status Running, ererything were fine.
 
 ## Query the pod
 
@@ -42,7 +42,7 @@ As we already did with the docker image, we will now query the running container
 To contact the service running on Kubernets, we need to find the port where it is listening.
 
 ```
-export PORT=$(kubectl get services | grep server-hello-container* | awk '{print $5}' | cut -b 4-8)
+export PORT=$(kubectl get services | grep server-hello* | awk '{print $5}' | cut -b 4-8)
 echo $PORT
 ```
 

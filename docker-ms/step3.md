@@ -41,7 +41,17 @@ As we already did with the docker image, we will now query the running container
 
 To contact the service running on Kubernets, we need to find the port where it is listening.
 
-`export PORT=$(kubectl get services | grep server-hello* | awk '{print $5}' | cut -b 4-8) & echo $PORT`{{execute}}
+To find the port we need to list the service that expose the application. 
+
+The command to do that is: `kubectl get services`
+
+The following command is surrounded to store the result in an environment variables.
+
+`export PORT=$(kubectl get services | grep server-hello* | awk '{print $5}' | cut -b 4-8)`{{execute}}
+
+To see the result execute:
+
+`echo $PORT`{{execute}}
 
 Now the we have the port, we can query it, replacing the PORT in the following URL.
 
@@ -57,9 +67,9 @@ To be sure that the response was served by our pod, we can read the pod logs.
 
 To read them, we need to know the pod id. To find it we can just execute the same commando above:
 
-`export POD_ID=$(kubetcl get pods | awk '{print $1}')`{{execute}}
+`export POD_ID=$(kubectl get pods | grep server-hello-* | awk '{print $1}')`{{execute}}
 
-I surrounded it to save the pod id in an environment variable, to use for the next command.
+The command is surrounded to save the pod id in an environment variable, to use for the next command.
 
 `kubectl logs $POD_ID`{{execute}}
 

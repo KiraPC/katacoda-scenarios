@@ -21,7 +21,7 @@ You can fine this file already defined in the folder 'server-hello/infra' with t
 
 Let's create the deployment
 
-`kubectl create -f deployment.yml`{{execute}}
+`kubectl create -f deployment.yaml`{{execute}}
 
 ## Check the pods status
 
@@ -41,10 +41,7 @@ As we already did with the docker image, we will now query the running container
 
 To contact the service running on Kubernets, we need to find the port where it is listening.
 
-```
-export PORT=$(kubectl get services | grep server-hello* | awk '{print $5}' | cut -b 4-8)
-echo $PORT
-```{{execute}}
+`export PORT=$(kubectl get services | grep server-hello* | awk '{print $5}' | cut -b 4-8) & echo $PORT`{{execute}}
 
 Now the we have the port, we can query it, replacing the PORT in the following URL.
 
@@ -54,4 +51,18 @@ You can do it just clicking on this:
 
 Copy and paste the result of this command on your browser.
 
-Congrats, you deployed a microservice on Kubernetes.
+## Check the pod logs
+
+To be sure that the response was served by our pod, we can read the pod logs.
+
+To read them, we need to know the pod id. To find it we can just execute the same commando above:
+
+`export POD_ID=$(kubetcl get pods | awk '{print $1}')`{{execute}}
+
+I surrounded it to save the pod id in an environment variable, to use for the next command.
+
+`kubectl logs $POD_ID`{{execute}}
+
+Now, you should able to see two request received from your IP.
+
+END!
